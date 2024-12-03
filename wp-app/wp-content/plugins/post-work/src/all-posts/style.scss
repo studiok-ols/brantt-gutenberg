@@ -1,0 +1,112 @@
+.wp-block-create-block-all-posts {
+	background-color: #e9f2f1;
+	color: var(--wp--preset--color--contrast);
+
+	padding-bottom: 5rem;
+
+	.wp-post-image {
+		width: 100%;
+		height: unset;
+		display: block;
+		aspect-ratio: 16/9;
+		object-fit: cover;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: 20px;
+		row-gap: 30px;
+
+		> li:first-child {
+
+			.post-read-more {
+				width: 66.66%;
+				left: unset;
+				right: 0;
+			}
+
+			width: 100%;
+			display: flex;
+
+			.post-work-link {
+				display: flex;
+			}
+
+			.post-work-image-wrapper {
+				width: 33.33333333333333%;
+				img {
+					aspect-ratio: unset;
+					height: 100%;
+				}
+			}
+			.post-work-text-wrapper {
+				width: 66.66666666666666%;
+				padding: 3rem;
+				padding-right: 5rem;
+				box-sizing: border-box;
+			}
+
+		}
+
+		> li {
+			background-color: white;
+			width: calc(33.3333333333% - 14px);
+			position: relative;
+
+			h2 { font-size: 1rem; }
+			.title { text-transform: uppercase; }
+			.post-work-text-wrapper { padding: 2rem; }
+
+			transition: all 0.3s ease-in-out;
+			&:hover {
+				transform: translateY(-10px);
+				transition: all 0.3s ease-in-out;
+			}
+
+			.post-work-link {
+				width: 100%;
+				display: block;
+				text-decoration: none;
+
+			}
+
+			.featured-post {
+				color: #FF4043;
+				font-size: 0.75rem;
+				text-transform: uppercase;
+				font-family: 'Montserrat', sans-serif;
+				font-weight: 700;
+			}
+
+			.post-read-more {
+				background-color: #22B4AB;
+				color: white;
+				position: absolute;
+				width: 100%;
+				left: 0;
+				bottom: 0;
+				font-size: 0.8rem;
+				padding: 5px 30px;
+				box-sizing: border-box;
+				opacity: 0;
+			}
+
+			&:hover {
+				filter: drop-shadow(0 0 3rem #0006);
+				transition: all 0.3s ease-in-out;
+				.post-read-more {
+					transition: all 0.3s ease-in-out;
+					opacity: 1;
+				}
+			}
+
+		}
+
+
+	}
+
+}

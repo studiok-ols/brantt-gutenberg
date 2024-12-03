@@ -1,0 +1,21 @@
+:root {
+    --wp--preset--font-size--normal: 19px;
+    --wp--preset--font-size--medium: 1rem;
+    --wp--preset--font-family--body: 'Roboto';
+    --wp--preset--color--contrast: #1B3454;
+
+}
+
+body {
+    font-size: var(--wp--preset--font-size--normal);
+}
+
+#wp--skip-link--target {
+    max-width: 1400px;
+    margin: auto;
+    background-color: #e9f2f1;
+}
+h2 {
+    font-family: 'Montserrat';
+    font-weight: 700;
+}

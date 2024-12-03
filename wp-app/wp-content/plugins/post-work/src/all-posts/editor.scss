@@ -1,0 +1,25 @@
+.wp-block-create-block-all-posts {
+
+	.post-work-image-wrapper {
+		img {
+			width: 100%;
+			height: unset;
+			display: block;
+			aspect-ratio: 16/9;
+			object-fit: cover;
+		}
+	}
+	.post-work-text-wrapper {
+		color: #1B3454;
+		h2 { font-size: 1rem; }
+		.title {
+			text-transform: uppercase;
+			font-size: var(--wp--preset--font-size--normal);
+			font-weight: 700;
+			font-family: 'Montserrat', sans-serif;
+			color: #1B3454;
+		}
+
+	}
+
+}

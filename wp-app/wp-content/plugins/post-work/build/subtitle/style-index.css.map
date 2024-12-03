@@ -1,0 +1,1 @@
+{"version":3,"file":"subtitle/style-index.css","mappings":";;;AAAA;EACC;EACA;EACA;AACD,C","sources":["webpack://post-work/./src/subtitle/style.scss"],"sourcesContent":[".wp-block-create-block-subtitle {\n\tfont-family: 'Montserrat';\n\tfont-weight: 700;\n\tcolor: #1B3454;\n}\n"],"names":[],"sourceRoot":""}

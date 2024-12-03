@@ -1,0 +1,53 @@
+version: "3.8"
+
+services:
+  mysql_db:
+    container_name: mysql_container
+    image: mariadb:noble
+    ports:
+      - "3306:3306"
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+    expose:
+      - 3306
+    networks:
+      - mynet
+
+  #wordpress image
+  wordpress:
+    depends_on:
+      - mysql_db
+    container_name: wp_container
+#    image: wordpress:php8.3-apache
+    image: stkwordpress:1.0.1
+
+    volumes:
+      - ./php.ini:/usr/local/etc/php/php.ini
+      - type: bind
+        source: ./wp-app
+        target: /var/www/html
+    ports:
+      - "8002:80"
+    environment:
+      WORDPRESS_DB_HOST: mysql_db:3306
+      WORDPRESS_DB_USER: ${MYSQL_USER}
+      WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
+      WORDPRESS_DB_NAME: ${MYSQL_DATABASE}
+      WORDPRESS_DEBUG: ${WORDPRESS_DEBUG}
+    expose:
+      - 80
+    labels:
+      - "traefik.http.routers.web.rule=Host(`brantt.test`)"
+    networks:
+      - mynet
+
+volumes:
+  db_data:
+
+networks:
+  mynet:
