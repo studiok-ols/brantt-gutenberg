@@ -16,6 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 function create_block_post_work_block_init() {
+	register_block_type( __DIR__ . '/build/cta' );
 	register_block_type( __DIR__ . '/build/all-posts' );
 	register_block_type( __DIR__ . '/build/contents' );
 	register_block_type( __DIR__ . '/build/subtitle' );

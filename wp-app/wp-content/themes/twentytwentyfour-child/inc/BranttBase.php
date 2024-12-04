@@ -23,6 +23,7 @@ class BranttBase
 			'create-block/subtitle',
 			'create-block/contents',
 			'create-block/all-posts',
+			'create-block/cta',
 		];
 		return $allowed_blocks;
 	}
