@@ -72,7 +72,7 @@ body.udp-modal-is-opened {
 }
 
 .udp-modal.loading {
-	background-image: url();
+	/*background-image: url();*/
 }
 
 .udp-modal.loading::before {
